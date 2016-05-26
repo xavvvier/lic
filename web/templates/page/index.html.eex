@@ -1,0 +1,12 @@
+<div class="jumbotron">
+  <h2><%= gettext "Licencias" %></h2>
+  <p class="lead">Para realizar una consulta, ingrese el numero de serie de su equipo</p>
+</div>
+
+    <%= form_for @conn, search_path(@conn, :create), [as: :search], fn f -> %>
+        <div class="form-group">
+           <label class="control-label">Serie:</label>
+            <%= text_input f, :number, placeholder: "Ingrese el número de serie", class: "form-control" %>
+        </div>
+        <%= submit "Buscar", class: "btn btn-primary" %>
+    <% end %>

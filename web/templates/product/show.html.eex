@@ -1,0 +1,32 @@
+<h2><%= @product.serial_number %></h2>
+
+<ul>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @product.description %>
+  </li>
+  <li>
+      Licenses:
+      <div class="table-responsive">
+          <table class="table table-bordered table-hover table-condensed">
+              <thead><tr><th>Name</th><th>Key</th><th></th></tr></thead>
+              <tbody>
+              <%= for license <- @product.licenses do %>
+                  <tr>
+                      <td><%= license.description %></td>
+                      <td><%= license.number %></td>
+                      <td>
+        <%= link "Delete", to: license_path(@conn, :delete, license, @product.id), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+                      </td>
+                  </tr>
+              <% end %>
+              </tbody>
+          </table>
+      </div>
+  </li>
+</ul>
+
+<%= link "Edit", to: product_path(@conn, :edit, @product), class: "btn btn-default btn-xs" %>
+<%= link "Back", to: product_path(@conn, :index), class: "btn btn-default btn-xs" %>
+<%= link "Add license", to: license_path(@conn, :new, @product), class: "btn btn-primary btn-xs" %>

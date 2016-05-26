@@ -1,0 +1,6 @@
+<h2>New license</h2>
+
+<%= render "form.html", changeset: @changeset, product: @product,
+                        action: license_path(@conn, :create) %>
+
+<a href="javascript:history.back()">Back</a>
