@@ -32,6 +32,10 @@ config :logger, :console, format: "[$level] $message\n"
 # and calculating stacktraces is usually expensive.
 config :phoenix, :stacktrace_depth, 20
 
+config :lic, Lic.Auth,
+  user: "user",
+  pass: "123"
+
 # Configure your database
 config :lic, Lic.Repo,
   adapter: Ecto.Adapters.Postgres,

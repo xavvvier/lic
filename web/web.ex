@@ -36,6 +36,7 @@ defmodule Lic.Web do
 
       import Lic.Router.Helpers
       import Lic.Gettext
+      import Lic.Auth, only: [authenticate: 2]
     end
   end
 
@@ -58,6 +59,7 @@ defmodule Lic.Web do
   def router do
     quote do
       use Phoenix.Router
+      import Lic.Auth, only: [authenticate: 2]
     end
   end
 

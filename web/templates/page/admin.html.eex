@@ -1,0 +1,2 @@
+<%= link "Productos", to: product_path(@conn, :index) %>
+<%= link "Licencias", to: license_path(@conn, :index) %>
