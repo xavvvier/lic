@@ -1,2 +1,32 @@
-Los datos encontrados son:
-<%= @result %>
+<h2>Resultado de la búsqueda</h2>
+<%= if @result == [] do %>
+    <h5>
+        No se encontraron licencias con este número de serial
+    </h5>
+<% else %>
+<div class="table-responsive">
+    <table class="table table-bordered table-condensed table-hover">
+        <thead>
+            <tr>
+                <th>Descripción</th>
+                <th>Licencia</th>
+            </tr>
+        </thead>
+        <tbody>
+        <%= for license <- @result do %>
+             <% [x, y] = license %>
+            <tr>
+                <td>
+                     <%= y %>
+                </td>
+                <td>
+                     <%= x %>
+                </td>
+            </tr>
+        <% end %>
+        </tbody>
+    </table>
+</div>
+<% end %>
+
+<a href="javascript:history.back()">Volver</a>

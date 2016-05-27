@@ -1,2 +1,6 @@
-<%= link "Productos", to: product_path(@conn, :index) %>
-<%= link "Licencias", to: license_path(@conn, :index) %>
+<div>
+    <%= link "Products", to: product_path(@conn, :index) %>
+</div>
+<div>
+    <%= link "Licenses", to: license_path(@conn, :index) %>
+</div>
